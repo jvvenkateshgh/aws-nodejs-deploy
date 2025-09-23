@@ -18,4 +18,5 @@ jobs:
       run: docker build ./api/ -t jvvenkateshdh/aws-nodejs-deploy:latest
     - name: push image to docker hub
       run:
+        docker login -u jvvenkateshdh -p ${{ secrets.DOCKER_HUB_TOKEN }}
         docker push jvvenkateshdh/aws-nodejs-deploy:latest
